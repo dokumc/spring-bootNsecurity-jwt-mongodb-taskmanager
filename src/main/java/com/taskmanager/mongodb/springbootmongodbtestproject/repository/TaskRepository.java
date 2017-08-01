@@ -5,16 +5,12 @@
  */
 package com.taskmanager.mongodb.springbootmongodbtestproject.repository;
 
-import com.taskmanager.mongodb.springbootmongodbtestproject.document.Employee;
-import com.taskmanager.mongodb.springbootmongodbtestproject.document.Project;
-import java.util.List;
+import com.taskmanager.mongodb.springbootmongodbtestproject.document.Task;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
+
 @Repository
-public interface ProjectRepository extends MongoRepository<Project, String>{
-    
-    
-//    List<Project> findProjectAssignedToManager(Employee emp);
+public interface TaskRepository  extends MongoRepository<Task, String>{
     
 }

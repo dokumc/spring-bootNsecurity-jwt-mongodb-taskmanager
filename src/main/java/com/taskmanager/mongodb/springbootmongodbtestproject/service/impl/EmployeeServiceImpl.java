@@ -12,6 +12,7 @@ import com.taskmanager.mongodb.springbootmongodbtestproject.repository.AppUserRe
 import com.taskmanager.mongodb.springbootmongodbtestproject.repository.EmployeeRepository;
 import com.taskmanager.mongodb.springbootmongodbtestproject.repository.RoleRepository;
 import com.taskmanager.mongodb.springbootmongodbtestproject.service.EmployeeService;
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -133,6 +134,30 @@ public class EmployeeServiceImpl  implements EmployeeService{
         
         return null;
         
+    }
+
+    @Override
+    public Employee getEmployeeById(String id) {
+
+        
+        Employee emp = this.employeeRepository.findOne(id);
+        return emp;
+    }
+
+    @Override
+    public List<Employee> findAllByRole(String label) {
+
+         List<Employee> list = new ArrayList<>();
+        if(label !=null ){
+        
+            Role role = this.roleRepository.findByName(label);
+            if(role != null){
+                list = this.employeeRepository.findAllByRole(role);
+                
+            }
+        }
+    
+        return list;
     }
 
 }

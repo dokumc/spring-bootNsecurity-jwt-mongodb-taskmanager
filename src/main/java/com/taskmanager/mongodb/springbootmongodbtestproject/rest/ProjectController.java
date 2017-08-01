@@ -43,5 +43,11 @@ public class ProjectController {
         ProjectDto newproj = this.projService.updateProjectDetails(proj);
         return newproj;
     }
+    @PostMapping("/byrole")
+    public List<ProjectDto> updateProjectDetail(@RequestBody String id){
     
+      
+        List<ProjectDto> list = this.projService.projectsAssignedToManager(id);
+        return list;
+    }
 }

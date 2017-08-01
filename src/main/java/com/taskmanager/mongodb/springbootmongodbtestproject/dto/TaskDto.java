@@ -29,7 +29,8 @@ public class TaskDto {
     private String amount_of_work;
     
    
-  
+    private Employee employee;
+    private Project project;
     
 
     public TaskDto() {
@@ -88,6 +89,10 @@ public class TaskDto {
         }
         task.setAmount_of_work(amount_of_work);
         
+        if(t.getEmployee() != null){
+        
+            task.setEmployee(t.getEmployee());
+        }
      
         
         return task;
@@ -139,7 +144,14 @@ public class TaskDto {
         }
         task.setAmount_of_work(amount_of_work);
         
-    
+        if(t.getEmployee() != null){
+        
+            task.setEmployee(t.getEmployee());
+        }
+        if(t.getProject() != null){
+        
+            task.getProject();
+        }
         
         
         return task;
@@ -194,6 +206,22 @@ public class TaskDto {
 
     public void setEnd_time(String end_time) {
         this.end_time = end_time;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 
  

@@ -7,6 +7,7 @@ package com.taskmanager.mongodb.springbootmongodbtestproject.service;
 
 import com.taskmanager.mongodb.springbootmongodbtestproject.document.Project;
 import com.taskmanager.mongodb.springbootmongodbtestproject.dto.ProjectDto;
+import com.taskmanager.mongodb.springbootmongodbtestproject.dto.TaskDto;
 import java.util.List;
 
 
@@ -17,4 +18,9 @@ public interface ProjectService {
          public List<ProjectDto> getProjectDetails() ;
         public void insertProjectDetails(ProjectDto proj);
         public ProjectDto updateProjectDetails(ProjectDto proj);
+        
+        
+        public List<ProjectDto> projectsAssignedToManager(String id);
+        
+        public void insertNewTask(TaskDto task);
 }

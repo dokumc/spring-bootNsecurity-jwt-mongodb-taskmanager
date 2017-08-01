@@ -98,5 +98,21 @@ public class UserController {
         return emp;
         
     }
+    @PostMapping("/employee/get")
+    public Employee getEmployeeProfile(@RequestBody String id){
+    
+    
+        Employee emp = this.employeeService.getEmployeeById(id);
+        return emp;
+        
+    }
+     @PostMapping("/employee/byrole")
+    public List<Employee> getEmployeeByRole(@RequestBody String label){
+    
+    
+        List<Employee> list = this.employeeService.findAllByRole(label);
+        return list;
+        
+    }
     
 }

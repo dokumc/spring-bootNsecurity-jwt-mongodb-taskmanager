@@ -33,4 +33,8 @@ public interface EmployeeService {
     public void insertRole(Role role);
     public void updateRole(Role role);
     
+    public Employee getEmployeeById(String id);
+    
+    public List<Employee> findAllByRole(String role);
+  
 }
